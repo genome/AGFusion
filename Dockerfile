@@ -30,6 +30,10 @@ RUN pip3 install .
 # Install AGFusion databases
 RUN mkdir -p /opt/agfusiondb/
 WORKDIR /opt/agfusiondb
+# Pre-generated db files are available for ensembl_version < 93 and can be downloaded using:
+# RUN agfusion download -s homo_sapiens -r ${ensembl_version} -d /opt/agfusiondb/
+# RUN agfusion download -s mus_musculus -r ${ensembl_version} -d /opt/agfusiondb/
+# To use newer versions, the db must be built from source with the follow commands:
 # At the time of writing, this downloads Pfam release 35
 RUN curl http://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/database_files/pfamA.txt.gz > pfamA.txt.gz
 RUN gunzip pfamA.txt.gz
