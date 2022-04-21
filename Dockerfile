@@ -19,7 +19,7 @@ RUN pip3 install mysqlclient
 
 # INSTALL AGFUSION & DATABASE FILES
 
-ENV ensembl_version=95
+ENV ensembl_version=105
 
 # Download latest AGFusion from source and install with pip
 WORKDIR /usr/local/bin

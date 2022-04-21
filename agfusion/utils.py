@@ -15,7 +15,7 @@ AGFUSION_DB_URL = "https://s3.amazonaws.com/agfusion/agfusion."
 # this is mostly contigent on the maximum ensembl release supported
 # by pyensembl
 
-MAX_ENSEMBL_RELEASE = 95
+MAX_ENSEMBL_RELEASE = 105
 
 GENOME_SHORTCUTS = {
     'GRCm38':['mus_musculus',MAX_ENSEMBL_RELEASE],
@@ -61,8 +61,10 @@ for i in range(63,MAX_ENSEMBL_RELEASE+1):
 for i in range(67,MAX_ENSEMBL_RELEASE+1):
     if i < 68:
         ENSEMBL_MYSQL_TABLES['mus_musculus'][i] = 'mus_musculus_core_' + str(i) + '_37'
-    else:
+    elif i < 103:
         ENSEMBL_MYSQL_TABLES['mus_musculus'][i] = 'mus_musculus_core_' + str(i) + '_38'
+    else:
+        ENSEMBL_MYSQL_TABLES['mus_musculus'][i] = 'mus_musculus_core_' + str(i) + '_39'
 
 # min amino acid length of domain to plot it
 
