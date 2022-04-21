@@ -23,7 +23,7 @@ ENV ensembl_version=105
 
 # Download latest AGFusion from source and install with pip
 WORKDIR /usr/local/bin
-RUN git clone https://github.com/malachig/AGFusion.git
+RUN git clone https://github.com/genome/AGFusion.git
 WORKDIR /usr/local/bin/AGFusion
 RUN pip3 install .
 
