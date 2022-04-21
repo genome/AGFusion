@@ -61,7 +61,7 @@ for i in range(63,MAX_ENSEMBL_RELEASE+1):
 for i in range(67,MAX_ENSEMBL_RELEASE+1):
     if i < 68:
         ENSEMBL_MYSQL_TABLES['mus_musculus'][i] = 'mus_musculus_core_' + str(i) + '_37'
-    elif < 103:
+    elif i < 103:
         ENSEMBL_MYSQL_TABLES['mus_musculus'][i] = 'mus_musculus_core_' + str(i) + '_38'
     else:
         ENSEMBL_MYSQL_TABLES['mus_musculus'][i] = 'mus_musculus_core_' + str(i) + '_39'
