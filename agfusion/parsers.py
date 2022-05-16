@@ -51,11 +51,19 @@ class STARFusion(_Parser):
                 'STAR-Fusion input'
 
             for line in reader:
-                gene_5prime = line['LeftGene'].split('^')[1].split('.')[0]
-                gene_5prime_name = line['LeftGene'].split('^')[0]
+                if '^' in line['LeftGene']:
+                    gene_5prime = line['LeftGene'].split('^')[1].split('.')[0]
+                    gene_5prime_name = line['LeftGene'].split('^')[0]
+                else:
+                    gene_5prime = line['LeftGene'].split('.')[0]
+                    gene_5prime_name = gene_5prime
                 gene_5prime_junction = int(line['LeftBreakpoint'].split(':')[1])
-                gene_3prime = line['RightGene'].split('^')[1].split('.')[0]
-                gene_3prime_name = line['RightGene'].split('^')[0]
+                if '^' in line['RightGene']:
+                    gene_3prime = line['RightGene'].split('^')[1].split('.')[0]
+                    gene_3prime_name = line['RightGene'].split('^')[0]
+                else:
+                    gene_3prime = line['RightGene'].split('.')[0]
+                    gene_3prime_name = gene_3prime
                 gene_3prime_junction = int(line['RightBreakpoint'].split(':')[1])
                 self.fusions.append(
                     {
