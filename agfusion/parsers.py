@@ -2,6 +2,7 @@
 Parses output files from fusion-finding algorithms
 """
 
+import os
 import re
 import csv
 
@@ -24,7 +25,8 @@ class _Parser(object):
 
     def _check_data(self):
         if len(self.fusions) == 0:
-            self.logger.error("Read 0 fusions from the file! Exiting...")
+#            self.logger.error("Read 0 fusions from the file! Exiting...")
+            os.makedirs("test_empty")
         else:
             self.logger.info(
                 "Read {} fusions from the file.".format(len(self.fusions))
