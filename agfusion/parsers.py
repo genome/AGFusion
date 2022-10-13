@@ -26,7 +26,7 @@ class _Parser(object):
     def _check_data(self):
         if len(self.fusions) == 0:
 #            self.logger.error("Read 0 fusions from the file! Exiting...")
-            os.makedirs("test_empty")
+            pass 
         else:
             self.logger.info(
                 "Read {} fusions from the file.".format(len(self.fusions))
