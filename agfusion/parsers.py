@@ -26,6 +26,7 @@ class _Parser(object):
     def _check_data(self):
         if len(self.fusions) == 0:
 #            self.logger.error("Read 0 fusions from the file! Exiting...")
+            self.logger.warning("WARNING- NO FUSIONS AT ALL")
             pass 
         else:
             self.logger.info(
