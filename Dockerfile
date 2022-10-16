@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV PYENSEMBL_CACHE_DIR=/opt
 
 RUN apt-get update -y
-RUN apt-get install -y build-essential python3 python3-pip python3-matplotlib python3-pandas python3-future python3-biopython curl less vim libnss-sss git zip
+RUN apt-get install -y build-essential python3 python3-pip python3-matplotlib python3-pandas python3-future python3-biopython python3-zipfile curl less vim libnss-sss git zip
 RUN pip3 install pyensembl
 
 # Additional libraries needed for AGFusion build command

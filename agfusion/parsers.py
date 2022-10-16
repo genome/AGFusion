@@ -5,6 +5,7 @@ Parses output files from fusion-finding algorithms
 import os
 import re
 import csv
+import zipfile
 
 
 class _Parser(object):
@@ -27,7 +28,9 @@ class _Parser(object):
         if len(self.fusions) == 0:
 #            self.logger.error("Read 0 fusions from the file! Exiting...")
             self.logger.warning("WARNING- NO FUSIONS AT ALL")
-            pass 
+            os.mkdir("agfusion_results")
+            with zipfile.ZipFile("agfusion_results.zip", mode="w") as archive:
+                archive.write("agfusion_results")
         else:
             self.logger.info(
                 "Read {} fusions from the file.".format(len(self.fusions))
