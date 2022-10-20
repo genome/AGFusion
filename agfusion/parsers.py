@@ -26,13 +26,12 @@ class _Parser(object):
 
     def _check_data(self):
         if len(self.fusions) == 0:
-#            self.logger.error("Read 0 fusions from the file! Exiting...")
-            self.logger.warning("WARNING- NO FUSIONS AT ALL")
-            print("making directory")
-            os.mkdir("agfusion_results")
-            print("zipping file")
-            with zipfile.ZipFile("agfusion_results.zip", mode="w") as archive:
+            #self.logger.error("Read 0 fusions from the file! Exiting...")
+            if not os.path.exists(newpath):
+                os.mkdir("agfusion_results")
+            with zipfile.ZipFile("/cromwell_root/agfusion_results.zip", mode="w") as archive:
                 archive.write("agfusion_results")
+            self.logger.warning("WARNING- Read 0 fusions from the file!")
             pass
         else:
             self.logger.info(
