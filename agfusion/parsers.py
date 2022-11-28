@@ -27,10 +27,10 @@ class _Parser(object):
     def _check_data(self):
         if len(self.fusions) == 0:
             #self.logger.error("Read 0 fusions from the file! Exiting...")
-            if not os.path.exists("agfusion_results"):
-                os.mkdir("agfusion_results")
-            with zipfile.ZipFile("/cromwell_root/agfusion_results.zip", mode="w") as archive:
-                archive.write("agfusion_results")
+            if not os.path.exists("/cromwell_root/agfusion_results"):
+                os.mkdir("/cromwell_root/agfusion_results")
+            #with zipfile.ZipFile("/cromwell_root/agfusion_results.zip", mode="w") as archive:
+                #archive.write("agfusion_results")
             self.logger.warning("WARNING- Read 0 fusions from the file!")
             pass
         else:
