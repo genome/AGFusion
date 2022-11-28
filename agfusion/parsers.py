@@ -29,8 +29,8 @@ class _Parser(object):
             #self.logger.error("Read 0 fusions from the file! Exiting...")
             if not os.path.exists("agfusion_results"):
                 os.mkdir("agfusion_results")
-            #with zipfile.ZipFile("/cromwell_root/agfusion_results.zip", mode="w") as archive:
-                #archive.write("agfusion_results")
+            with zipfile.ZipFile("/cromwell_root/agfusion_results.zip", mode="w") as archive:
+                archive.write("agfusion_results")
             self.logger.warning("WARNING- Read 0 fusions from the file!")
             pass
         else:
