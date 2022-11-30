@@ -31,8 +31,6 @@ class _Parser(object):
                 os.mkdir("agfusion_results")
             with open('agfusion_results/agfusion_readme.txt', 'x') as f:
                 f.write('No fusions detected')
-            #with zipfile.ZipFile("/cromwell_root/agfusion_results.zip", mode="w") as archive:
-                #archive.write("agfusion_results")
             self.logger.warning("WARNING- Read 0 fusions from the file!")
             pass
         else:
