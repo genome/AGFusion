@@ -29,7 +29,7 @@ class _Parser(object):
             #self.logger.error("Read 0 fusions from the file! Exiting...")
             if not os.path.exists("agfusion_results"):
                 os.mkdir("agfusion_results")
-            with open('agfusion_results/agfusion_readme.txt') as f:
+            with open('agfusion_results/agfusion_readme.txt', 'x') as f:
                 f.write('No fusions detected')
             #with zipfile.ZipFile("/cromwell_root/agfusion_results.zip", mode="w") as archive:
                 #archive.write("agfusion_results")
