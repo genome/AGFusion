@@ -5,7 +5,6 @@ Parses output files from fusion-finding algorithms
 import os
 import re
 import csv
-import zipfile
 
 
 class _Parser(object):
